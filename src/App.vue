@@ -1,26 +1,57 @@
 <template>
   <div id="app">
       <div class="container">
-        <div class="row">
-            <div class="grid-item-1">a</div>
-            <div class="grid-item-1">b</div>
-            <div class="grid-item-1">a</div>
-            <div class="grid-item-1">b</div>
-            <div class="grid-item-1">a</div>
-            <div class="grid-item-1">b</div>          
-        </div>
-        <div class="row">
-            <div class="grid-item">a</div>
-            <div class="grid-item">b</div>
-            <div class="grid-item">c</div>
-            <div class="grid-item">d</div>                 
-        </div>     
-        <div class="row">
-            <div class="grid-item">a</div>
-            <div class="grid-item">b</div>
-            <div class="grid-item">c</div>
-            <div class="grid-item">d</div>                 
-        </div>           
+        <form action="">
+            <div class="row">
+                <div class="grid-item-1">
+                    <div class="input-box">
+                        <label for="">labelzãaaaaaaaoooooooooooooooooooooooooooooooo</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="grid-item-1">
+                    <div class="input-box">
+                        <label for="">labelzãaaaaaaaooooo</label>
+                        <select name="" id="">
+                            <option value="">a</option>
+                            <option value="">b</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="grid-item-1">
+                    <div class="input-box">
+                        <label for="">labelzãaaaaaaaooooo</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="grid-item-1">
+                    <div class="input-box">
+                        <label for="">labelzãaaaaaaaooooo</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="grid-item-1">
+                    <div class="input-box">
+                        <label for="">labelzãaaaaaaaooooo</label>
+                        <input type="text">
+                    </div>
+                </div>
+                <div class="grid-item-1">
+                    <div class="input-box">
+                        <label for="">labelzãaaaaaaaooooo</label>
+                        <input type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="grid-item-6">
+                    <button>Normal</button>
+                    <button class="primary">Primary</button>
+                    <button class="success">Success</button>
+                    <button class="danger">Danger</button>
+                </div>
+            </div>
+        </form>          
       </div>
   </div>
 </template>
