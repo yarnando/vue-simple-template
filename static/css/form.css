@@ -3,6 +3,7 @@ form .input-box {
   flex-flow: column;
   width: 100%;
   padding: 0 5px;
+  
 }
 
 form label {
@@ -13,7 +14,9 @@ form input,
 form select {
   height: 10px;
   margin-top: 2px;
-  padding: 15px 8px;
-  border-radius: 4px;
-  border: 1px solid rgba(204, 204, 204, 0.568);
+  padding: 15px 5px;
+  border: 1px solid rgba(204, 204, 204, 0.15);
+  -webkit-box-shadow: 1px 1px 3px 0px rgba(204,204,204,1);
+  -moz-box-shadow: 1px 1px 3px 0px rgba(204,204,204,1);
+  box-shadow: 1px 1px 3px 0px rgba(204,204,204,1);
 }

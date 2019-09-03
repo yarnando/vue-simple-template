@@ -19,6 +19,7 @@
 @media (min-width: 768px) {
   .row {
     flex-flow: row wrap;
+    flex-basis: 100%;
     align-items: flex-end;
   }
   .row [class|="grid-item"] {
