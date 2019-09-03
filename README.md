@@ -1,4 +1,8 @@
 # simple-template
+Attention: change readme line above, name in package.json, directory name, title name and text inside strong tags in index.html, and remove this line.
+
+This is a template made by Fernando Silva Santos, to build simple projects with Vue.
+
 
 ## Project setup
 ```
