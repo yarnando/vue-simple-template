@@ -1,7 +1,7 @@
 <template>
   <div id="app">
       
-      <HeaderComponent title="Template"/>
+      <HeaderComponent title="Template" :navItems="navItems" />
 
       <div class="container">
 
@@ -141,6 +141,11 @@ export default {
           success: false,
           simple: false,
           loading: false,
+          navItems: [
+                { type:"routerlink", link:"/test0", title: "title0" },
+                { type:"routerlink", link:"/test1", title: "title1" },
+                { type:"anchor", link:"/test2", title: "title2" },           
+            ]
       }
   },
 }

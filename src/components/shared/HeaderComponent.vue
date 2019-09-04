@@ -1,37 +1,158 @@
 <template>
-  <div class="header">
-      <h1 class="header__title">{{title}}</h1>
-  </div>
+    <div class="header">
+        <div class="header__titleContainer">
+            <h1 class="header__title">{{title}}</h1>
+            <button
+                v-if="navItems"
+                class="header__navButton"
+                @click="navbarVisible = !navbarVisible"
+            >
+                <span class="icon-menu"></span>
+            </button>
+        </div>
+        <transition name="slideFade" mode="out-in">
+            <div
+                v-if="navbarVisible"
+                :class="`header__navbar header__navbar${navbarVisible ? '-visible' : ''}`"
+            >
+                <ul>
+                    <li v-for="(item,index) in navItems" :key="index">
+                        <a v-if="item.type == 'routerlink'" :href="item.link">{{item.title}}</a>
+                        <a v-else>
+                            <router-link :to="item.link">{{item.title}}</router-link>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </transition>    
+    </div>
 </template>
 
 <script>
 export default {
-  props: {
-    title: String
-  }
-}
+    props: {
+        title: String,
+        navItems: Array // Array of objects with properties: type('routerlink' or 'anchor'), link and title
+    },
+    data() {
+        return {
+            navbarVisible: false,
+        };
+    },    
+    created() {
+        window.innerWidth >= 555 ? this.navbarVisible = true : this.navbarVisible = false
+        this.$nextTick(() => {
+            window.addEventListener('resize', () => {
+                if(window.innerWidth >= 555) {
+                    this.navbarVisible = true
+                } else {
+                    this.navbarVisible = false
+                }
+            });
+        })        
+    },
+};
 </script>
 
 <style>
-
 .header {
-  display: flex;
-  align-items: center;
-  background: rgb(47, 47, 47);
-  min-height: 60px;
-  padding: 0 10vw;
-  color: white;
+    display: flex;
+    flex-direction: column;
+    background: rgb(47, 47, 47);
+    height: 70px;
+    color: white;
+}
+
+.header__titleContainer {
+    display: flex;
+    justify-content: space-between;
 }
 
 .header__title {
-  font-size: 20px;  
-  font-weight: normal;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 20px;
+}
+
+.header__navButton {
+    display: initial;
+    font-size: 20px;
+}
+
+.header__navbar {
+    display: none;
+    flex-direction: column;
+    background: rgb(47, 47, 47);
+    z-index: 4;
+}
+
+.header__navbar-visible {
+    display: flex;
+}
+
+.header__navbar > ul {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    align-items: stretch;
+    list-style: none;
+}
+
+.header__navbar > ul > li {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__navbar > ul > li:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+
+.header__navbar > ul > li > a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.header__navbar > ul > li:hover a {
+    color: black;
 }
 
 @media (min-width: 555px) {
-  .header__title {
-    font-size: 24px;   
-  }
+    .header {
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    .header__title {
+        font-size: 24px;
+        padding-left: 20px;
+    }
+    .header,
+    .header__navbar > ul {
+        flex-direction: row;
+    }
+    .header__navbar {
+        display: flex;
+        align-items: flex-end;
+    }
+    .header__navButton {
+        display: none;
+    }
+    /* transitions */
+    .slideFade-enter-active,
+    .slideFade-leave-active {
+        transition: opacity 0.5s;
+        transition: all 0.7s;
+    }
+    .slideFade-enter,
+    .slideFade-leave-to {
+        opacity: 0;
+        transform: translateY(-40px);
+    }    
 }
-
 </style>
