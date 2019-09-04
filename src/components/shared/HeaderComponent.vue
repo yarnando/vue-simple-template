@@ -61,6 +61,10 @@ export default {
     background: rgb(47, 47, 47);
     height: 70px;
     color: white;
+    -webkit-box-shadow: 4px 4px 6px 0px rgba(204, 204, 204, 1);
+    -moz-box-shadow: 4px 4px 6px 0px rgba(204, 204, 204, 1);
+    box-shadow: 4px 4px 6px 0px rgba(204, 204, 204, 1);    
+    margin-bottom: 40px;
 }
 
 .header__titleContainer {
