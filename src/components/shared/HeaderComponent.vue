@@ -17,7 +17,7 @@
             >
                 <ul>
                     <li v-for="(item,index) in navItems" :key="index">
-                        <a v-if="item.type == 'routerlink'" :href="item.link">{{item.title}}</a>
+                        <a v-if="item.type != 'routerlink'" :href="item.link">{{item.title}}</a>
                         <a v-else>
                             <router-link :to="item.link">{{item.title}}</router-link>
                         </a>
