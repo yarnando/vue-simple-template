@@ -27,12 +27,6 @@
         </div>
 
         <div class="row">
-            <div class="grid-item-6">
-                <LoadingComponent :loading="true" />
-            </div>
-        </div>
-
-        <div class="row">
             <form action="">
                 <div class="row">
                     <div class="grid-item-1">
@@ -75,13 +69,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="grid-item-6">
-                        <button>Normal</button>
+                <div class="row align-center">
+                    <div class="grid-item-2">
+                    <button>Normal</button>
                         <button class="primary">Primary</button>
+                    </div>
+                    <div class="grid-item-2">
                         <button class="success">Success</button>
                         <button class="danger">Danger</button>
                     </div>
+                    <div class="grid-item-2">
+                        Loading... <LoadingComponent :loading="true" :size="18" />
+                    </div>                                
                 </div>
             </form>  
         </div>
