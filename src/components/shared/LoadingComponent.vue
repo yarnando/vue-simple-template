@@ -15,6 +15,8 @@ export default {
 
 <style>
 .spinner {
+    margin-left: 5px;
+    display: inline-block;
     border: 3px solid rgba(0, 0, 0, 0.1);
     border-left-color: #0077b5;
     border-radius: 50%;
